@@ -11,7 +11,7 @@ LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 String months[]={ "JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC" };
 
 /*
- * Digital Clock Using the DS1307-module-v03 and an LCD
+ * Digital Clock Using the DS1307-module-v03(RTC module) and an LCD
 */
 
 void setup()
@@ -21,9 +21,6 @@ void setup()
   Serial.println("Initialize RTC module");
   // Initialize DS3231
   clock.begin();
-  
-  // Manual (YYYY, MM, DD, HH, II, SS
-  // clock.setDateTime(2016, 12, 9, 11, 46, 00);
   
   // Send sketch compiling time to Arduino
   clock.setDateTime(__DATE__, __TIME__);    
